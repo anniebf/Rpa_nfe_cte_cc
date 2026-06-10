@@ -1,8 +1,5 @@
 .venv/
 __pycache__/
-img/captcha.jpg
-downloads/csv/*
-downloads/xls/*
 Rpa_SEFAZ/__pycache__/
 .vscode/
 .env
