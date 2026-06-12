@@ -29,5 +29,15 @@ def retornoCnpj():
     
     return Resutadocnpj
 
+def retornoInscEstd():
+    cursor.execute("""
+            SELECT m0_insc, M0_FILIAL, M0_CODFIL, M0_CODIGO from PROTHEUS11.sigaemp 
+            WHERE LENGTH(trim(M0_CGC)) >= 12 AND 
+            m0_insc not in ('ISENTO',' ') OR m0_insc = null 
+            """)
+    ResutadoInscEstd= cursor.fetchall()
+    return ResutadoInscEstd
+
 if __name__ == "__main__":
     retornoCnpj()
+    retornoInscEstd()

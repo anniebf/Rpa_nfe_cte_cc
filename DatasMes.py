@@ -4,7 +4,6 @@ def gerar_intervalo_datas():
     hoje = datetime.now()
     ano = hoje.year
     mes = hoje.month
-    dia = hoje.day
 
     #if dia < 10:
     # Pega o mês anterior
@@ -36,9 +35,19 @@ def gerar_intervalo_datas():
     data_fim = ultimo_dia.strftime("%d%m%Y")
 
     return data_inicio, data_fim
+def dataContaCorrente():
+    hoje = datetime.now()
+    ano = hoje.year
+    mes = hoje.month
 
-# Teste
-print(gerar_intervalo_datas())
+    #if dia < 10:
+    # Pega o mês anterior
+    primeiro_dia_anterior = datetime(ano, mes, 1) - timedelta(days=1)
+    mes_anterior = primeiro_dia_anterior.month
+    ano_anterior = primeiro_dia_anterior.year
+    
+    return mes_anterior, ano_anterior
 
 if __name__ == "__main__":
     gerar_intervalo_datas()
+    dataContaCorrente()
